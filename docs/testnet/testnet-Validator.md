@@ -24,21 +24,31 @@ sudo apt-get update
 
 ### Validator
 
-Install & Configure Network Time Protocol (NTP) Client
-NTP is a networking protocol designed to synchronize the clocks of computers over a network. NTP allows you to synchronize the clocks of all the systems within the network. Currently it is required that validators' local clocks stay reasonably in sync, so you should be running NTP or a similar service. You can check whether you have the NTP client by running:
+Install & Configure Network Time Protocol (NTP) Service
+NTP is a networking protocol designed to synchronize the clocks of computers over a network. NTP allows you to synchronize the clocks of all the systems within the network. Currently it is required that validators' local clocks stay reasonably in sync, so you should be running NTP or a similar service. You can check whether you have the NTP service by running:
+
+```bash
+sudo apt install chrony
+```
+
+Enable and start it
+```
+sudo systemctl enable chrony
+sudo systemctl start chrony
+```
+
+To check Chrony working parameters issue command:
+```
+chronyc tracking
+```
+That will show to which stratum server Chrony is connected to synchronize time.
 
 If you are using Ubuntu 18.04 / 19.04 / 20.04, NTP Client should be installed by default.
 ```
 timedatectl
 ```
-If NTP is installed and running, you should see System clock synchronized: yes (or a similar message). If you do not see it, you can install it by executing:
-```
-sudo apt-get install ntp
-```
-ntpd will be started automatically after install. You can query ntpd for status information to verify that everything is working:
-```
-sudo ntpq -p
-```
+If Chrony is installed and running, you should see System clock synchronized: yes (or a similar message). 
+
 
 >WARNING: Skipping this can result in the validator node missing block authorship opportunities. If the clock is out of sync (even by a small amount), the blocks the validator produces may not get accepted by the network. This will result in ImOnline heartbeats making it on chain, but zero allocated blocks making it on chain. 
 >
@@ -47,16 +57,6 @@ sudo ntpq -p
 ## Installing the Galital Testnet Binary
 
 <br>
-
-Install and configure time
-```
-sudo apt install chrony
-```
-
-Enable it
-```
-sudo systemctl enable chrony
-```
 
 Allow the process in firewall
 
