@@ -1,0 +1,969 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/galital-logo.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.9">
+    
+    
+      
+        <title>Setup Validator - Galital documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+  
+
+
+
+  
+  
+
+
+
+  <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-190563951-2","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
+  <script async src="https://www.google-analytics.com/analytics.js"></script>
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#setup-validator" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="Galital documentation" class="md-header__button md-logo" aria-label="Galital documentation" data-md-component="logo">
+      
+  <img src="../assets/galital-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Galital documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Setup Validator
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="Select language">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="testnet-Validator.html" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../index.fr/" hreflang="fr" class="md-select__link">
+                    Français
+                  </a>
+                </li>
+                
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/starkleytech/galital-docs/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Galital documentation" class="md-nav__button md-logo" aria-label="Galital documentation" data-md-component="logo">
+      
+  <img src="../assets/galital-logo.png" alt="logo">
+
+    </a>
+    Galital documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/starkleytech/galital-docs/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        Galital: The Digital Galaxy
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.fr.html" class="md-nav__link">
+        Index.fr
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Bounties
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Bounties" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Bounties
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bounties/bounties.html" class="md-nav__link">
+        List of official bounties
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Maintain
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Maintain" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Maintain
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maintain/migrate-validator.html" class="md-nav__link">
+        Migrate your Validator
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      <label class="md-nav__link" for="__nav_5">
+        Testnet
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Testnet" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Testnet
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Setup Validator
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="testnet-Validator.html" class="md-nav__link md-nav__link--active">
+        Setup Validator
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-setup-server-components" class="md-nav__link">
+    Part 1 - Setup server components
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    Requirements
+  </a>
+  
+    <nav class="md-nav" aria-label="Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#minimum-hardware" class="md-nav__link">
+    Minimum Hardware :
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ideal-hardware" class="md-nav__link">
+    Ideal Hardware :
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-ubuntu-2004" class="md-nav__link">
+    Using Ubuntu 20.04 :
+  </a>
+  
+    <nav class="md-nav" aria-label="Using Ubuntu 20.04 :">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#update-your-ubuntu" class="md-nav__link">
+    Update your Ubuntu
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validator" class="md-nav__link">
+    Validator
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-the-galital-testnet-binary" class="md-nav__link">
+    Installing the Galital Testnet Binary
+  </a>
+  
+    <nav class="md-nav" aria-label="Installing the Galital Testnet Binary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-and-enable-chrony" class="md-nav__link">
+    Install and enable Chrony
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#firewall-configuration" class="md-nav__link">
+    Firewall configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-fail2ban" class="md-nav__link">
+    Setup fail2ban
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-galital-validator-binaries" class="md-nav__link">
+    Install Galital Validator binaries
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-user-account-to-run-validator" class="md-nav__link">
+    Create user account to run Validator
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-galital-validator-service" class="md-nav__link">
+    Create Galital Validator service
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-if-validator-is-started" class="md-nav__link">
+    Check if validator is started
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-assign-the-node-to-an-account" class="md-nav__link">
+    Part 2 - Assign the node to an account
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 2 - Assign the node to an account">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-session-key" class="md-nav__link">
+    Create session key:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#submitting-the-setkeys-transaction" class="md-nav__link">
+    Submitting the setKeys Transaction:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3-set-on-chain-name-of-the-validator" class="md-nav__link">
+    Part 3 - Set on-chain name of the validator
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="wallet.html" class="md-nav__link">
+        Create a Galital Wallet
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-setup-server-components" class="md-nav__link">
+    Part 1 - Setup server components
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    Requirements
+  </a>
+  
+    <nav class="md-nav" aria-label="Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#minimum-hardware" class="md-nav__link">
+    Minimum Hardware :
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ideal-hardware" class="md-nav__link">
+    Ideal Hardware :
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-ubuntu-2004" class="md-nav__link">
+    Using Ubuntu 20.04 :
+  </a>
+  
+    <nav class="md-nav" aria-label="Using Ubuntu 20.04 :">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#update-your-ubuntu" class="md-nav__link">
+    Update your Ubuntu
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validator" class="md-nav__link">
+    Validator
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-the-galital-testnet-binary" class="md-nav__link">
+    Installing the Galital Testnet Binary
+  </a>
+  
+    <nav class="md-nav" aria-label="Installing the Galital Testnet Binary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-and-enable-chrony" class="md-nav__link">
+    Install and enable Chrony
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#firewall-configuration" class="md-nav__link">
+    Firewall configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-fail2ban" class="md-nav__link">
+    Setup fail2ban
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-galital-validator-binaries" class="md-nav__link">
+    Install Galital Validator binaries
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-user-account-to-run-validator" class="md-nav__link">
+    Create user account to run Validator
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-galital-validator-service" class="md-nav__link">
+    Create Galital Validator service
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-if-validator-is-started" class="md-nav__link">
+    Check if validator is started
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-assign-the-node-to-an-account" class="md-nav__link">
+    Part 2 - Assign the node to an account
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 2 - Assign the node to an account">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-session-key" class="md-nav__link">
+    Create session key:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#submitting-the-setkeys-transaction" class="md-nav__link">
+    Submitting the setKeys Transaction:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3-set-on-chain-name-of-the-validator" class="md-nav__link">
+    Part 3 - Set on-chain name of the validator
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/starkleytech/galital-docs/edit/master/docs/testnet/testnet-Validator.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="setup-validator">Setup Validator</h1>
+<h2 id="part-1-setup-server-components">Part 1 - Setup server components</h2>
+<h2 id="requirements">Requirements</h2>
+<p>The most common way for a beginner to run a validator is on a cloud server running Linux. You may choose whatever <a href="#list-of-vps-providers">VPS providers</a> that your prefer, and whatever operating system you are comfortable with.</p>
+<p>The transactions weights in Galital Testnet were benchmarked on standard hardware. It is recommended that validators run at least the standard hardware in order to ensure they are able to process all blocks in time. The following are not minimum requirements but if you decide to run with less than this beware that you might have performance issue.</p>
+<h3 id="minimum-hardware">Minimum Hardware :</h3>
+<ul>
+<li>6GB ram, 60 GB Storage, 2 CPU , <strong>stable server uplink connection with fixed IP</strong></li>
+</ul>
+<h3 id="ideal-hardware">Ideal Hardware :</h3>
+<ul>
+<li>60GB ram, 300 GB Storage, 6 CPU, <strong>stable server uplink connection with fixed IP</strong></li>
+</ul>
+<h2 id="using-ubuntu-2004">Using Ubuntu 20.04 :</h2>
+<h3 id="update-your-ubuntu">Update your Ubuntu</h3>
+<pre><code>sudo apt-get update
+</code></pre>
+<h3 id="validator">Validator</h3>
+<p>Install &amp; Configure Network Time Protocol (NTP) Client
+NTP is a networking protocol designed to synchronize the clocks of computers over a network. NTP allows you to synchronize the clocks of all the systems within the network. Currently it is required that validators' local clocks stay reasonably in sync, so you should be running NTP or a similar service. You can check whether you have the NTP client by running:</p>
+<p>If you are using Ubuntu 18.04 / 19.04 / 20.04, NTP Client should be installed by default.</p>
+<pre><code>timedatectl
+</code></pre>
+<p>If NTP is installed and running, you should see System clock synchronized: yes (or a similar message). If you do not see it, you can install it by executing:</p>
+<pre><code>sudo apt-get install ntp
+</code></pre>
+<p>ntpd will be started automatically after install. You can query ntpd for status information to verify that everything is working:</p>
+<pre><code>sudo ntpq -p
+</code></pre>
+<blockquote>
+<p>WARNING: Skipping this can result in the validator node missing block authorship opportunities. If the clock is out of sync (even by a small amount), the blocks the validator produces may not get accepted by the network. This will result in ImOnline heartbeats making it on chain, but zero allocated blocks making it on chain. 
+</p>
+</blockquote>
+<h2 id="installing-the-galital-testnet-binary">Installing the Galital Testnet Binary</h2>
+<p><br></p>
+<h3 id="install-and-enable-chrony">Install and enable Chrony</h3>
+<p>Chrony is time synchronization service. It will keep time on server in sync, which is crucial for validator to operate without interruption.</p>
+<pre><code>sudo apt install chrony
+sudo systemctl enable chrony
+</code></pre>
+<h3 id="firewall-configuration">Firewall configuration</h3>
+<p>Configure firewall ports to allow SSH and Validator service to communicate.</p>
+<pre><code>sudo ufw allow 22
+sudo ufw allow 30333
+sudo ufw enable
+</code></pre>
+<h3 id="setup-fail2ban">Setup fail2ban</h3>
+<p>It provides basic-level protection against distributed brute-force attacks.</p>
+<pre><code>sudo apt install -y fail2ban &amp;&amp; sudo systemctl enable fail2ban &amp;&amp; sudo service fail2ban start
+</code></pre>
+<h3 id="install-galital-validator-binaries">Install Galital Validator binaries</h3>
+<pre><code>wget https://github.com/starkleytech/galital/releases/download/2.0.1/galital &amp;&amp; sudo chmod +x ./galital &amp;&amp; sudo mv ./galital /usr/bin/galital
+</code></pre>
+<h3 id="create-user-account-to-run-validator">Create user account to run Validator</h3>
+<p>It is recommended to run validator as non-root user.
+For that create dedicated user account which will be used to run validator.</p>
+<pre><code>sudo adduser galital
+</code></pre>
+<p>when adding user you will be asked to provide password and some additional details for the account.
+Only password is mandatory, other parameters can be left blank.</p>
+<h3 id="create-galital-validator-service">Create Galital Validator service</h3>
+<p>Create service file file in /lib/systemd/system/tal.service</p>
+<pre><code>sudo nano /lib/systemd/system/galital.service
+</code></pre>
+<p>Content of galital.service file <strong><em>(make sure to change "A Node Name" and replace it with your moniker)</em></strong>:</p>
+<pre><code>[Unit]
+Description=Galital Validator
+After=network-online.target
+
+[Service]
+ExecStart=/usr/bin/galital --port &quot;30333&quot; --name &quot;A Node Name&quot; --validator --chain galital   
+User=galital
+Restart=always
+ExecStartPre=/bin/sleep 5
+RestartSec=30s
+LimitNOFILE=8192
+
+[Install]
+WantedBy=multi-user.target
+</code></pre>
+<blockquote>
+<p>If you need to change port, you can setup with <code>--prometheus-port</code> <code>--rpc-port</code> and <code>--ws-port</code></p>
+</blockquote>
+<p>then start the service</p>
+<pre><code>sudo systemctl enable galital &amp;&amp; sudo service galital start 
+</code></pre>
+<h3 id="check-if-validator-is-started">Check if validator is started</h3>
+<p>To ensure that Galital Validator process works:</p>
+<pre><code>ps aux | grep galital
+</code></pre>
+<p>You should see similar output:</p>
+<pre><code>galital   8108  9.9 21.0 1117976 419772 ?      Ssl  May17 601:17 /usr/bin/galital --port 30333 --name &quot;A Node Name&quot; --validator --chain galital
+</code></pre>
+<p>Check if your node is appearing in the telemetry UI : <a href="https://telemetry.polkadot.io/#list/Galital">https://telemetry.polkadot.io/#list/Galital</a></p>
+<blockquote>
+<p>Do not forget to change the name parameter (--name "A Node Name")</p>
+</blockquote>
+<p><strong><em>Video demonstrating all above steps: </em></strong></p>
+<iframe width="800" height="600" src="https://www.youtube.com/embed/K7ZNKnu0sIs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<h2 id="part-2-assign-the-node-to-an-account">Part 2 - Assign the node to an account</h2>
+<p>You can get some RTAL (Testnet token) with the discord bot</p>
+<p>You need to create an controller account in order to do the next steps. </p>
+<blockquote>
+<p>The stash account serve as you "cold wallet" with all your precious coin</p>
+<p>The controller account serve as a manager to your stash account
+<br></br><strong>Always keep in safe place your keystore file or your 12/24 words seed</strong></p>
+</blockquote>
+<p>To create an controller account, add account
+<img alt="Controller" src="assets/controllerAccount1.png" /></p>
+<p>Save your mnemonic seed
+<img alt="Controller" src="assets/controllerAccount2.png" /></p>
+<p>then name your account and add a password
+<img alt="Controller" src="assets/controllerAccount3.png" /> </p>
+<p>Then send some $RTAL (from your stash account) for covering network fees</p>
+<p>You can proceed to the next steps</p>
+<h3 id="create-session-key">Create session key:</h3>
+<p>Go in you terminal where the node is installed and paste the current command, you will have a session key of your node.</p>
+<pre><code>curl -H &quot;Content-Type: application/json&quot; -d '{&quot;id&quot;:1, &quot;jsonrpc&quot;:&quot;2.0&quot;, &quot;method&quot;: &quot;author_rotateKeys&quot;, &quot;params&quot;:[]}' http://localhost:9933
+</code></pre>
+<h3 id="submitting-the-setkeys-transaction">Submitting the setKeys Transaction:</h3>
+<p>Go to the <a href="https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fgalital-rpc-testnet.starkleytech.com#/staking/actions">testnet</a> you can now create a validator, use the key generated above to paste in the form.
+<img alt="Validator" src="assets/valitador1.png" /></p>
+<p>Select your stash account, controller account and so one
+<img alt="Validator" src="assets/valitador2.png" /></p>
+<p>Add you keys form the past command.
+<img alt="Validator" src="assets/valitador3.png" /></p>
+<p>You should now see your validator in the waiting tab
+<img alt="Validator" src="assets/valitador4.png" /></p>
+<p><strong><em>Video demonstrating all above steps:</em></strong></p>
+<iframe width="800" height="600" src="https://www.youtube.com/embed/JLZsAeqSD2g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<h2 id="part-3-set-on-chain-name-of-the-validator">Part 3 - Set on-chain name of the validator</h2>
+<p>Short video guide demonstrating how to assign name to validator.</p>
+<iframe width="800" height="600" src="https://www.youtube.com/embed/8ES8-eg70eI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<p>Voila, you are all set</p>
+<p><br></br></p>
+<p align=right> Written by Masterdubs & WeHaveCookie </p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright © 2021 Galital
+          </div>
+        
+        Made for
+        <a href="https://galital.com/" target="_blank" rel="noopener">
+          Galital
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.477d984a.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.82b56eb2.min.js"></script>
+      
+    
+  </body>
+</html>
